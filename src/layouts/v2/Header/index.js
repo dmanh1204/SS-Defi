@@ -1,15 +1,9 @@
-import './style.scss';
 import { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import assets from '../../../assets';
 import useDrawer from '../../../components/Drawer/useDrawer';
-import Drawer from '../../../components/Drawer';
-import useModal from '../../../components/ModalWallet/useModal';
-import ModalWallet from '../../../components/ModalWallet';
 import { route } from '../../../routes/configs';
-import { useNavigate } from 'react-router-dom';
-import { useAccount } from '@starknet-react/core';
-
-import { useActiveWeb3React } from '../../../evm/hooks/useActiveWeb3React';
+import './style.scss';
 
 const ButtonConnectWallet = () => {
     const openInNewTab = (url) => {
