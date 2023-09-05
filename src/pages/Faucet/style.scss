@@ -21,9 +21,9 @@
     }
 
     .faucet-div {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
 
         border-radius: 6px;
         border: 1px solid #24c3bc;
@@ -39,7 +39,6 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-
             padding-top: 18px;
             padding-bottom: 18px;
             padding-right: 16px;
@@ -52,6 +51,7 @@
             background: rgba(217, 217, 217, 0.1);
 
             .faucet-input {
+                margin-right: 8px;
                 display: flex;
                 background-color: transparent;
                 border: none;
@@ -61,7 +61,7 @@
                 justify-content: center;
                 color: #fff;
                 font-family: Roboto;
-                font-size: 20px;
+                font-size: 16px;
                 font-style: normal;
                 font-weight: 800;
                 line-height: 75px; /* 375% */
@@ -91,11 +91,12 @@
                 }
             }
             .faucet-button {
-                width: 198px;
+                width: 160px;
                 height: 48px;
                 border-radius: 6px;
                 border: 2px solid #24c3bc;
                 background: #24c3bc;
+                cursor: pointer;
                 @media screen and (max-width: 650px) {
                     width: 108px;
                 }
@@ -107,6 +108,19 @@
                     font-size: 12px;
                 }
             }
+        }
+        .invalid {
+            margin-top: 12px;
+            text-align: center;
+            color: #c22f60;
+            font-size: 20px;
+        }
+
+        .success {
+            color: #24c3bc;
+            margin-top: 12px;
+            text-align: center;
+            font-size: 20px;
         }
     }
 }

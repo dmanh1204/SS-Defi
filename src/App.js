@@ -79,8 +79,8 @@ const App = () => {
                             return <Route key={index} path={route.path} element={<Page />}></Route>;
                         })}
                     </Routes>
-                    <Footer />
-                    <FooterLayout />
+                    {/* <Footer /> */}
+                    {/* <FooterLayout /> */}
                 </div>
             </Router>
         </StarknetConfig>

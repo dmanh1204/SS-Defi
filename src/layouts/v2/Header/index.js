@@ -12,39 +12,24 @@ import { useAccount } from '@starknet-react/core';
 import { useActiveWeb3React } from '../../../evm/hooks/useActiveWeb3React';
 
 const ButtonConnectWallet = () => {
-    const { account: accountEvm, isConnected: isConnectedEvm } = useActiveWeb3React();
-
-    const { isShowing, toggle } = useModal();
-    const { address, status } = useAccount();
-
-    // Handle short address type
-    const shortAddress = () => {
-        let addr = isConnectedEvm ? accountEvm : address;
-        if (addr) {
-            // console.log('Current address:', address);
-            const firstDigits = addr.slice(0, 6);
-            const lastDigits = addr.slice(-4);
-
-            const resultAddress = firstDigits + '...' + lastDigits;
-            return resultAddress;
-        }
+    const openInNewTab = (url) => {
+        var win = window.open(url, '_blank');
+        win.focus();
     };
 
     return (
-        <div className="btn-conc g-5" onClick={toggle}>
-            <ModalWallet isShowing={isShowing} hide={toggle} />
-            <div></div>
-            {status == 'connected' || isConnectedEvm ? (
-                <div>
-                    <span className="btn-conc__title fw-7">{shortAddress()}</span>
-                </div>
-            ) : (
-                <div className="row g-5 a-center">
-                    <span className="btn-conc__title fw-7">Connect</span>
-                    <span className="btn-conc__title btn-conc__title--hidden fw-7">Wallet</span>
-                    <img className="btn-conc__icon" src={assets.svg.iconPower} alt="icon-power" />
-                </div>
-            )}
+        <div className="btn-conc g-5" onClick={() => openInNewTab('https://starksport.finance')}>
+            {/* <div
+                        className="header__item p-15"
+                        onClick={() => }
+                    >
+                        <h4>Marketplace</h4>
+                    </div>
+            <ModalWallet isShowing={isShowing} hide={toggle} /> */}
+            <div className="row g-5 a-center">
+                <span className="btn-conc__title fw-7">Launch App</span>
+                {/* <img className="btn-conc__icon" src={assets.svg.iconPower} alt="icon-power" /> */}
+            </div>
         </div>
     );
 };
@@ -123,10 +108,10 @@ const HeaderLayout = () => {
                     }}
                 >
                     <img src={assets.images.logo} alt="logo" style={{ height: '5rem', width: '5rem' }} />
-                    <h2 className="header__title">Stark Sport</h2>
+                    <h2 className="header__title">STARKSPORT</h2>
                 </div>
 
-                <div className="header__nav row ">
+                {/* <div className="header__nav row ">
                     <div className="header__item p-15" onMouseEnter={handleMenuHover} onMouseLeave={handleMenuLeave}>
                         <h4>Exchange</h4>
 
@@ -164,14 +149,14 @@ const HeaderLayout = () => {
                                 >
                                     Overview
                                 </p>
-                                {/* <div
+                                <div
                                     className="menu__item py-10 fw-7"
                                     onClick={() => {
                                         navClick(route.claimToken);
                                     }}
                                 >
                                     <h4>Claim Testnet Token</h4>
-                                </div> */}
+                                </div>
                             </div>
                         )}
                     </div>
@@ -197,7 +182,7 @@ const HeaderLayout = () => {
                         onMouseEnter={handleMenuEarnHover}
                         onMouseLeave={handleMenuEarnLeave}
                     >
-                        <h4>Earn</h4>
+                        <h4>Earning</h4>
 
                         {showMenuEarn && (
                             <div ref={menuRef} className="menu col">
@@ -230,23 +215,23 @@ const HeaderLayout = () => {
                         )}
                     </div>
 
-                    {/* <div
+                    <div
                         className="header__item p-15"
                         onClick={() => {
                             navClick(route.airdrop);
                         }}
                     >
                         <h4>NFT Holder Reward</h4>
-                    </div> */}
+                    </div>
 
-                    {/* <div
+                    <div
                         className="header__item p-15"
                         onClick={() => {
                             navClick(route.info);
                         }}
                     >
                         <h4>Info</h4>
-                    </div> */}
+                    </div>
 
                     <div
                         className="header__item p-15"
@@ -256,15 +241,15 @@ const HeaderLayout = () => {
                     >
                         <h4>Documentation</h4>
                     </div>
-                </div>
+                </div> */}
             </div>
 
             <div className="row g-20">
                 <ButtonConnectWallet />
-                <Drawer isShowing={isDrawerShowing} hide={toggleDrawer} />
-                <div className="menu-icon" onClick={toggleDrawer}>
+                {/* <Drawer isShowing={isDrawerShowing} hide={toggleDrawer} /> */}
+                {/* <div className="menu-icon" onClick={toggleDrawer}>
                     <img src={assets.svg.iconMenu} alt="menu" style={{ height: 40, width: 40 }} />
-                </div>
+                </div> */}
             </div>
         </div>
     );
