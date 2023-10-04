@@ -7,9 +7,8 @@ const contentStyle = {
     margin: 0,
     height: '184px',
     color: '#fff',
-    lineHeight: '160px',
+    lineHeight: '36px',
     textAlign: 'center',
-    background: 'linear-gradient(0deg, #0B4C51 0%, #07051B 65.63%, #07051B 100%)',
     gap: '24px',
 };
 
@@ -18,7 +17,7 @@ export default function OurRoadmap() {
         <div className="min-[1440px]:gap-15 flex flex-col justify-center gap-10 md:mx-[60px] min-[1440px]:mx-[98px]">
             <HeaderComponent title="ROADMAP" subTitle="Our Roadmap" />
             <div className="max-w-[342px] md:hidden">
-                <RoadmapSliderMobile />
+                <RoadmapMobile />
             </div>
             <div className="hidden md:flex">
                 <RoadmapDesktop />
@@ -86,38 +85,31 @@ const RoadmapSliderMobile = () => {
     );
 };
 
+const RoadmapMobile = () => {
+    return (
+        <div className="inline-flex flex-col items-start rounded-[24px]">
+            {roadmapItemList.map((item, idx) => (
+                <RoadmapItem key={idx} item={item} />
+            ))}
+        </div>
+    );
+};
+
 const RoadmapItem = (props) => {
     return (
         <div className="mb-10 w-full">
-            <div
-                style={contentStyle}
-                className="inline-flex h-full w-full flex-col items-start gap-3 rounded-3xl border-[0.5px] border-[#C6C6C6] p-6"
-            >
+            <div style={contentStyle} className="flex h-[36px] w-full items-start gap-[20px] rounded-[24px] pb-[20px]">
                 <div
                     style={{
                         background: 'linear-gradient(135deg, #24C3BC 0%, #ADFFFB 100%)',
                     }}
-                    className="h-13 flex flex-col items-start justify-center gap-1 rounded-2xl px-5 py-3"
+                    className="h-[52px] flex flex-col items-start justify-center gap-[4px] rounded-2xl px-[20px] py-[12px]"
                 >
-                    <div className="font-['Exo_2'] text-2xl font-bold leading-normal text-[#1C1A2D]">
+                    <div className="font-['Exo_2'] text-[24px] font-bold leading-normal text-[#1C1A2D]">
                         {props.item.quarter} - {props.item.date}
                     </div>
                 </div>
                 <div className="font-['Roboto'] text-base font-bold text-white">{props.item.demoContent}</div>
-                {/* <div className="flex flex-col items-start gap-4">
-          {props.item.items.map((item: any, idx: any) => (
-            <div className="flex items-center gap-1">
-              {item.status ? (
-                <img src={icons.doneIcon} alt="icons" />
-              ) : (
-                <img src={icons.notDoneIcon} alt="icons" />
-              )}
-              <div className="text-start font-['Inter'] text-sm font-normal text-white">
-                {item.title}
-              </div>
-            </div>
-          ))}
-        </div> */}
             </div>
         </div>
     );
