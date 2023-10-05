@@ -68,7 +68,7 @@ const App = () => {
     const triedEager = useEagerConnect();
     useInactiveListener(!triedEager || !!activatingConnector);
 
-    const size = useWindowSize();
+    // const size = useWindowSize();
     const connectors = [
         new InjectedConnector({ options: { id: 'braavos' } }),
         new InjectedConnector({ options: { id: 'argentX' } }),

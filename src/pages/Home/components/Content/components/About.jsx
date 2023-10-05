@@ -4,14 +4,14 @@ import { HeaderComponent } from './HeaderComponent';
 
 export default function About() {
     return (
-        <>
+        <div id="about">
             <div className="min-[1440px]:hidden">
                 <AboutUsMobile />
             </div>
             <div className="hidden min-[1440px]:flex">
                 <AboutUsDesktop />
             </div>
-        </>
+        </div>
     );
 }
 

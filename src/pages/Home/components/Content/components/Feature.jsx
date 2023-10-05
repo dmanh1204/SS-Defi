@@ -3,7 +3,7 @@ import { HeaderComponent } from './HeaderComponent';
 
 export default function Feature() {
     return (
-        <div className="flex flex-col gap-[30px] md:mx-[98px] min-[1440px]:gap-20">
+        <div id="features" className="flex flex-col gap-[30px] md:mx-[98px] min-[1440px]:gap-20">
             <HeaderComponent title="FEATURES" subTitle="OUR FEATURES" />
             <FeatureCard />
         </div>

@@ -4,7 +4,10 @@ import { HeaderComponent } from './HeaderComponent';
 
 export default function Ecosystem() {
     return (
-        <div className="flex w-full flex-col gap-[30px] px-[24px] md:px-[60px] min-[1440px]:gap-[80px] min-[1440px]:px-[120px]">
+        <div
+            id="ecosystem"
+            className="flex w-full flex-col gap-[30px] px-[24px] md:px-[60px] min-[1440px]:gap-[80px] min-[1440px]:px-[120px]"
+        >
             <HeaderComponent title="ECOSYSTEM" subTitle="Our Ecosystem" />
             <div className="flex items-center justify-center">
                 <EcosystemBanner className="max-w-[342px] md:hidden" />

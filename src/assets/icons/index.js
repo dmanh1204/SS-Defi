@@ -30,6 +30,7 @@ import discordIcon from './svg/social/discord.svg';
 import mediumIcon from './svg/social/medium.svg';
 import telegramIcon from './svg/social/telegram.svg';
 import twitterIcon from './svg/social/twitter.svg';
+import githubIcon from './svg/social/github.svg';
 
 import mobileMenuIcon from './svg/MobileMenu.svg';
 
@@ -178,6 +179,7 @@ const icons = {
         twitterFooter,
         mediumFooter,
         redditFooter,
+        githubIcon,
     },
     mdRoadmap,
     BG_OFFICIAL,

@@ -52,7 +52,7 @@ const BannerButtonLaunchApp = () => {
 
 const BannerButtonAboutUs = () => {
     return (
-        <div className="button-hover-1 flex items-center justify-center gap-[4px] self-stretch rounded-[16px] border-2 border-[#24C3BC] bg-transparent px-[20px] py-[8px] w-[165px] md:w-[189px]">
+        <div className="button-hover-3 flex items-center justify-center gap-[4px] self-stretch rounded-[16px] border-[2px] border-[#24C3BC] bg-transparent px-[20px] py-[8px] w-[165px] md:w-[189px]">
             <div className="font-['Roboto'] text-[16px] font-bold text-white">More About Us</div>
         </div>
     );

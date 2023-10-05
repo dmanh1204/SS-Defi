@@ -1,6 +1,6 @@
 // import ModalWallet from "../../../../layouts/header/modal-wallet";
 // import useModal from "../../../../layouts/header/useModal";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 // import route from '../../../../routes/route';
 import icons from '../../../../assets/icons';
 import Logo from './components/Logo';
@@ -8,9 +8,12 @@ import LaunchAppButton from './components/LaunchAppButton';
 import MobileMenuButton from './components/MobileMenuButton';
 import { DropdownMenu } from './components/DropdownMenu';
 import { Popover, Transition } from '@headlessui/react';
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+import useModal from '../../../../components/ModalWallet/useModal';
+import ModalConnectApp from './components/ModalWallet';
 
-export default function SiteNavigation() {
+export default function SiteNavigation(props) {
     return (
         <>
             <div className="hidden md:block">
@@ -62,12 +65,27 @@ const MobileSiteNavigation = () => {
                             >
                                 <div className="stroke-secondary flex flex-col gap-[32px] py-[36px] md:w-full md:flex-shrink md:flex-row md:items-center md:justify-between md:border-y-0 md:py-0">
                                     <div className="flex flex-col gap-[32px] px-[16px] md:min-w-0 md:flex-shrink md:flex-row md:items-center md:gap-[32px] md:px-0">
-                                        <AboutMenu />
-                                        <FeaturesMenu />
-                                        <a className="text-[16px] font-medium text-white md:text-[14px]" href="/">
+                                        <a className="text-[16px] font-medium text-white md:text-[14px]" href="#about">
+                                            About
+                                        </a>
+                                        <a
+                                            className="text-[16px] font-medium text-white md:text-[14px]"
+                                            href="/features"
+                                        >
+                                            Features
+                                        </a>
+                                        <a
+                                            className="text-[16px] font-medium text-white md:text-[14px]"
+                                            href="/ecosystem"
+                                        >
+                                            Ecosystem
+                                        </a>
+                                        <a className="text-[16px] font-medium text-white md:text-[14px]" href="/backed">
                                             Backers & Partners
                                         </a>
-                                        <CommunityMenu />
+                                        {/* <AboutMenu />
+                                        <FeaturesMenu />
+                                        <CommunityMenu /> */}
                                     </div>
                                 </div>
                             </Popover.Panel>
@@ -79,10 +97,12 @@ const MobileSiteNavigation = () => {
     );
 };
 
-const DesktopSiteNavigation = () => {
+const DesktopSiteNavigation = (props) => {
     const isMobile = false;
     const navigation = useNavigate();
 
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const { isShowing, toggle } = useModal();
     return (
         <div
             style={{ background: 'rgba(255, 255, 255, 0.1)' }}
@@ -92,19 +112,35 @@ const DesktopSiteNavigation = () => {
                 <Logo className="h-[48px]" />
             </div>
             <div className="hidden items-center text-[20px] font-bold md:flex md:gap-[5px] lg:gap-[40px]">
-                <AboutMenu />
-                <div className="flex w-fit cursor-pointer items-center font-['Roboto'] text-[16px] md:text-[12px] min-[1000px]:text-[16px] font-bold text-white dark:hover:text-slate-200 max-[815px]:hidden">
-                    Backed & Parnerts
+                <div className="button-navbar-hover flex w-fit cursor-pointer items-center font-['Roboto'] text-[16px] md:text-[12px] min-[1000px]:text-[16px] font-bold text-white max-[815px]:hidden px-[20px] py-[12px]">
+                    <AnchorLink className="text-white hover:text-[#24c3bc]" href="#about">
+                        About
+                    </AnchorLink>
                 </div>
+                <div className="button-navbar-hover flex w-fit cursor-pointer items-center font-['Roboto'] text-[16px] md:text-[12px] min-[1000px]:text-[16px] font-bold text-white max-[815px]:hidden px-[20px] py-[12px]">
+                    <AnchorLink className="text-white hover:text-[#24c3bc]" href="#features">
+                        Features
+                    </AnchorLink>
+                </div>
+                <div className="button-navbar-hover flex w-fit cursor-pointer items-center font-['Roboto'] text-[16px] md:text-[12px] min-[1000px]:text-[16px] font-bold text-white max-[815px]:hidden px-[20px] py-[12px]">
+                    <AnchorLink className="text-white hover:text-[#24c3bc]" href="#ecosystem">
+                        Ecosystem
+                    </AnchorLink>
+                </div>
+                <div className="button-navbar-hover flex w-fit cursor-pointer items-center font-['Roboto'] text-[16px] md:text-[12px] min-[1000px]:text-[16px] font-bold text-white max-[815px]:hidden px-[20px] py-[12px]">
+                    <AnchorLink className="text-white hover:text-[#24c3bc]" href="#backed">
+                        {' '}
+                        Backed & Parnerts
+                    </AnchorLink>
+                </div>
+                {/* <AboutMenu />
                 <FeaturesMenu />
-                <CommunityMenu />
+                <CommunityMenu /> */}
             </div>
             <div className="flex items-center gap-3">
-                <LaunchAppButton
-                    onClick={() => navigation('/')}
-                    styleButton="py-[12px] px-[24px] rounded-[16px] h-[48px]"
-                />
+                <LaunchAppButton onClick={toggle} styleButton="py-[12px] px-[24px] rounded-[16px] h-[48px]" />
             </div>
+            <ModalConnectApp isShowing={isShowing} hide={toggle} />
         </div>
     );
 };
@@ -114,28 +150,24 @@ const AboutMenu = (className) => {
         {
             id: 'about',
             label: 'About us',
-            description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.`,
             href: '/',
             icon: icons.navbar.aboutUsIcon,
         },
         {
             id: 'audit',
             label: 'Audit',
-            description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.`,
             href: '/',
             icon: icons.navbar.auditIcon,
         },
         {
             id: 'whitepaper',
             label: 'Whitepaper',
-            description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.`,
             href: '/',
             icon: icons.navbar.whitepaperIcon,
         },
         {
             id: 'contact',
             label: 'Contact us',
-            description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.`,
             href: '/',
             icon: icons.navbar.contactUsIcon,
         },
@@ -149,28 +181,24 @@ const FeaturesMenu = () => {
         {
             id: 'kyc',
             label: 'KYC',
-            description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.`,
             href: '/',
             icon: icons.navbar.kycIcon,
         },
         {
             id: 'sale',
             label: 'Private/Public sale',
-            description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.`,
             href: '/',
             icon: icons.navbar.saleIcon,
         },
         {
             id: 'airdrop',
             label: 'Airdrop',
-            description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.`,
             href: '/',
             icon: icons.navbar.airdropIcon,
         },
         {
             id: 'locking',
             label: 'Locking',
-            description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.`,
             href: '/',
             icon: icons.navbar.lockingIcon,
         },

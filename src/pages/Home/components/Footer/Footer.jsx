@@ -135,35 +135,43 @@ const SocialCard = () => {
         {
             id: 'telegram',
             icon: icons.homepage.telegramFooter,
+            link: 'https://t.me/starksportchanel',
         },
         {
             id: 'discord',
             icon: icons.homepage.discordFooter,
+            link: 'https://discord.gg/starksport',
         },
         {
             id: 'twitter',
             icon: icons.homepage.twitterFooter,
+            link: 'https://twitter.com/starkfinance',
         },
         {
             id: 'medium',
             icon: icons.homepage.mediumFooter,
+            link: 'https://medium.com/@starksport',
         },
         {
-            id: 'reddit',
-            icon: icons.homepage.redditFooter,
+            id: 'github',
+            icon: icons.homepage.githubIcon,
+            link: 'https://github.com/starksport-project',
         },
     ];
 
     return (
         <div className="inline-flex items-start justify-center gap-3">
             {LogoSocialItem.map((item) => (
-                <div
+                <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noreferrer"
                     key={item.id}
                     style={{ background: 'rgba(255, 255, 255, 0.20)' }}
                     className="social-button-hover flex h-[36px] w-[36px] rounded-[16px] p-[4px] min-[375px]:h-[56px] min-[375px]:w-[56px] min-[375px]:p-[16px] md:h-[48px] md:w-[48px]"
                 >
                     <img src={item.icon} alt={item.id} />
-                </div>
+                </a>
             ))}
         </div>
     );

@@ -43,7 +43,7 @@ export const DropdownMenu = ({
                     <Menu.Button
                         as="div"
                         className={
-                            "flex w-full cursor-pointer items-center justify-between font-['Roboto'] text-[16px] md:text-[12px] font-bold text-white dark:hover:text-slate-200 md:gap-[4px]"
+                            "flex w-full cursor-pointer items-center justify-between font-['Roboto'] text-[16px] md:text-[12px] min-[1000px]:text-[16px] font-bold text-white dark:hover:text-slate-200 md:gap-[4px]"
                         }
                         onMouseEnter={onMouseEnter}
                         onMouseLeave={onMouseLeave}
