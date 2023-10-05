@@ -1,12 +1,11 @@
 import './App.scss';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HeaderLayout from './layouts/v2/Header';
 import { publicRoutes } from './routes';
 import { StarknetConfig, InjectedConnector } from '@starknet-react/core';
 import React, { useState, useEffect } from 'react';
 import FooterLayout from './layouts/v2/Footer';
 import Footer from './layouts/Footer';
-
 import { useEagerConnect } from './evm/hooks/useEagerConnect';
 import { useInactiveListener } from './evm/hooks/useInactiveListener';
 import { Web3Provider } from '@ethersproject/providers';
@@ -16,6 +15,7 @@ import actions from './redux/action';
 import SiteNavigation from './pages/Home/components/Navbar/SiteNavigation';
 import HomepageFooter from './pages/Home/components/Footer/Footer';
 import icons from './assets/icons';
+import { useLocationPath } from './hooks/useLocationPath';
 
 function getLibrary(provider) {
     const library = new Web3Provider(provider);
@@ -45,9 +45,7 @@ function useWindowSize() {
 
 const App = () => {
     console.clear();
-
-    const currentPath = useLocation().pathname;
-
+    const currentPath = useLocationPath();
     const dispatch = useDispatch();
 
     const isEvm = useSelector((state) => state.isEvm);

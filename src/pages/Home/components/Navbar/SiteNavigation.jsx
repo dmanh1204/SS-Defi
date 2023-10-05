@@ -1,7 +1,6 @@
 // import ModalWallet from "../../../../layouts/header/modal-wallet";
 // import useModal from "../../../../layouts/header/useModal";
 import { Link, useNavigate } from 'react-router-dom';
-// import route from '../../../../routes/route';
 import icons from '../../../../assets/icons';
 import Logo from './components/Logo';
 import LaunchAppButton from './components/LaunchAppButton';
@@ -27,13 +26,11 @@ export default function SiteNavigation(props) {
 }
 
 const MobileSiteNavigation = () => {
-    const isMobile = true;
-    const navigation = useNavigate();
-
+    const { isShowing, toggle } = useModal();
     return (
         <div
             style={{ background: 'rgba(255, 255, 255, 0.1)' }}
-            className="fixed top-0 z-[9999] flex h-[70px] w-screen justify-between px-6 py-[17px] backdrop-blur-[30px]"
+            className="fixed top-0 z-[9999] flex h-[70px] w-screen justify-between px-[24px] py-[17px] backdrop-blur-[30px]"
         >
             <Popover className="flex w-full justify-between">
                 {({ open }) => (
@@ -42,7 +39,7 @@ const MobileSiteNavigation = () => {
                             <Logo className="h-[30px]" />
                         </div>
                         <div className="flex items-center gap-3">
-                            <LaunchAppButton onClick={() => navigation('/')} />
+                            <LaunchAppButton onClick={toggle} />
                             <MobileMenuButton />
                         </div>
                         <Transition
@@ -70,22 +67,19 @@ const MobileSiteNavigation = () => {
                                         </a>
                                         <a
                                             className="text-[16px] font-medium text-white md:text-[14px]"
-                                            href="/features"
+                                            href="#features"
                                         >
                                             Features
                                         </a>
                                         <a
                                             className="text-[16px] font-medium text-white md:text-[14px]"
-                                            href="/ecosystem"
+                                            href="#ecosystem"
                                         >
                                             Ecosystem
                                         </a>
-                                        <a className="text-[16px] font-medium text-white md:text-[14px]" href="/backed">
+                                        <a className="text-[16px] font-medium text-white md:text-[14px]" href="#backed">
                                             Backers & Partners
                                         </a>
-                                        {/* <AboutMenu />
-                                        <FeaturesMenu />
-                                        <CommunityMenu /> */}
                                     </div>
                                 </div>
                             </Popover.Panel>
@@ -93,15 +87,12 @@ const MobileSiteNavigation = () => {
                     </>
                 )}
             </Popover>
+            <ModalConnectApp isShowing={isShowing} hide={toggle} />
         </div>
     );
 };
 
 const DesktopSiteNavigation = (props) => {
-    const isMobile = false;
-    const navigation = useNavigate();
-
-    const [isModalOpen, setIsModalOpen] = useState(false);
     const { isShowing, toggle } = useModal();
     return (
         <div
@@ -145,108 +136,108 @@ const DesktopSiteNavigation = (props) => {
     );
 };
 
-const AboutMenu = (className) => {
-    const aboutMenuItems = [
-        {
-            id: 'about',
-            label: 'About us',
-            href: '/',
-            icon: icons.navbar.aboutUsIcon,
-        },
-        {
-            id: 'audit',
-            label: 'Audit',
-            href: '/',
-            icon: icons.navbar.auditIcon,
-        },
-        {
-            id: 'whitepaper',
-            label: 'Whitepaper',
-            href: '/',
-            icon: icons.navbar.whitepaperIcon,
-        },
-        {
-            id: 'contact',
-            label: 'Contact us',
-            href: '/',
-            icon: icons.navbar.contactUsIcon,
-        },
-    ];
+// const AboutMenu = (className) => {
+//     const aboutMenuItems = [
+//         {
+//             id: 'about',
+//             label: 'About us',
+//             href: '/',
+//             icon: icons.navbar.aboutUsIcon,
+//         },
+//         {
+//             id: 'audit',
+//             label: 'Audit',
+//             href: '/',
+//             icon: icons.navbar.auditIcon,
+//         },
+//         {
+//             id: 'whitepaper',
+//             label: 'Whitepaper',
+//             href: '/',
+//             icon: icons.navbar.whitepaperIcon,
+//         },
+//         {
+//             id: 'contact',
+//             label: 'Contact us',
+//             href: '/',
+//             icon: icons.navbar.contactUsIcon,
+//         },
+//     ];
 
-    return <DropdownMenu className="text-[16px] md:text-[14px]" items={aboutMenuItems} heading={'About'} />;
-};
+//     return <DropdownMenu className="text-[16px] md:text-[14px]" items={aboutMenuItems} heading={'About'} />;
+// };
 
-const FeaturesMenu = () => {
-    const featuresMenuItems = [
-        {
-            id: 'kyc',
-            label: 'KYC',
-            href: '/',
-            icon: icons.navbar.kycIcon,
-        },
-        {
-            id: 'sale',
-            label: 'Private/Public sale',
-            href: '/',
-            icon: icons.navbar.saleIcon,
-        },
-        {
-            id: 'airdrop',
-            label: 'Airdrop',
-            href: '/',
-            icon: icons.navbar.airdropIcon,
-        },
-        {
-            id: 'locking',
-            label: 'Locking',
-            href: '/',
-            icon: icons.navbar.lockingIcon,
-        },
-    ];
+// const FeaturesMenu = () => {
+//     const featuresMenuItems = [
+//         {
+//             id: 'kyc',
+//             label: 'KYC',
+//             href: '/',
+//             icon: icons.navbar.kycIcon,
+//         },
+//         {
+//             id: 'sale',
+//             label: 'Private/Public sale',
+//             href: '/',
+//             icon: icons.navbar.saleIcon,
+//         },
+//         {
+//             id: 'airdrop',
+//             label: 'Airdrop',
+//             href: '/',
+//             icon: icons.navbar.airdropIcon,
+//         },
+//         {
+//             id: 'locking',
+//             label: 'Locking',
+//             href: '/',
+//             icon: icons.navbar.lockingIcon,
+//         },
+//     ];
 
-    return <DropdownMenu className="text-[16px] md:text-[14px" items={featuresMenuItems} heading={'Features'} />;
-};
+//     return <DropdownMenu className="text-[16px] md:text-[14px" items={featuresMenuItems} heading={'Features'} />;
+// };
 
-const CommunityMenu = () => {
-    const communityMenuItems = [
-        {
-            id: 'telegram',
-            label: 'Telegram',
-            href: '/',
-            icon: icons.navbar.telegramNavbar,
-        },
-        {
-            id: 'discord',
-            label: 'Discord',
-            href: '/',
-            icon: icons.navbar.discordNavbar,
-        },
-        {
-            id: 'twitter',
-            label: 'Twitter',
-            href: '/',
-            icon: icons.navbar.twitterNavbar,
-        },
-        {
-            id: 'medium',
-            label: 'Medium',
-            href: '/',
-            icon: icons.navbar.mediumNavbar,
-        },
-        {
-            id: 'reddit',
-            label: 'Reddit',
-            href: '/',
-            icon: icons.navbar.redditNavbar,
-        },
-    ];
+// const CommunityMenu = () => {
+//     const communityMenuItems = [
+//         {
+//             id: 'telegram',
+//             label: 'Telegram',
+//             href: '/',
+//             icon: icons.navbar.telegramNavbar,
+//         },
+//         {
+//             id: 'discord',
+//             label: 'Discord',
+//             href: '/',
+//             icon: icons.navbar.discordNavbar,
+//         },
+//         {
+//             id: 'twitter',
+//             label: 'Twitter',
+//             href: '/',
+//             icon: icons.navbar.twitterNavbar,
+//         },
+//         {
+//             id: 'medium',
+//             label: 'Medium',
+//             href: '/',
+//             icon: icons.navbar.mediumNavbar,
+//         },
+//         {
+//             id: 'reddit',
+//             label: 'Reddit',
+//             href: '/',
+//             icon: icons.navbar.redditNavbar,
+//         },
+//     ];
 
-    return (
-        <DropdownMenu
-            className="text-[16px] md:text-[14px"
-            items={communityMenuItems}
-            heading={'Community'}
-            dropdownClassName="md:w-[260px]"
-        />
-    );
-};
+//     return (
+//         <DropdownMenu
+//             className="text-[16px] md:text-[14px"
+//             items={communityMenuItems}
+//             heading={'Community'}
+//             dropdownClassName="md:w-[260px]"
+//         />
+//     );
+// };

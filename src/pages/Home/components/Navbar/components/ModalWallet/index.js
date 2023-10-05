@@ -27,16 +27,16 @@ const ModalConnectApp = ({ isShowing, hide }) => {
                                   <img src={assets.svg.iconClose} alt="close" style={{ height: 15, width: 15 }} />
                               </div>
                           </div>
-                          <div className="modal-body row j-center g-50">
+                          <div className="flex flex-col modal-body j-center gap-[24px]">
                               <a
-                                  href="app.starksport.finance/exchange"
+                                  href="https://exchange.starksport.finance/"
                                   target="_blank"
                                   className="wallet-icon-inactive a-center g-5"
                               >
                                   <p className="fz-18 fw-7">Exchange</p>
                               </a>
                               <a
-                                  href="app.starksport.finance/marketplace"
+                                  href="https://marketplace.starksport.finance/"
                                   target="_blank"
                                   className="wallet-icon-inactive col a-center g-5"
                               >

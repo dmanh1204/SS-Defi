@@ -16,7 +16,6 @@ const HomepageFooter = () => {
 };
 
 const HomepageFooterMobile = (props) => {
-    const navigation = useNavigate();
     return (
         <div
             style={{ background: 'rgba(28, 26, 45, 0.6)' }}
@@ -24,7 +23,7 @@ const HomepageFooterMobile = (props) => {
         >
             <div className="flex flex-col gap-[30px] px-[20px] py-[80px] md:mx-[60px] min-[1440px]:mx-[98px] min-[1440px]:flex-row min-[1440px]:justify-between">
                 <div className="flex flex-col">
-                    <FooterHeading navigation={navigation('/')} />
+                    <FooterHeading />
                 </div>
                 <div className="md:hidden">
                     <FooterBar />
@@ -49,7 +48,6 @@ const HomepageFooterMobile = (props) => {
 };
 
 const HomepageFooterDesktop = () => {
-    const navigation = useNavigate();
     return (
         <div
             style={{ background: 'rgba(28, 26, 45, 0.6)' }}
@@ -57,7 +55,7 @@ const HomepageFooterDesktop = () => {
         >
             <div className="flex flex-col gap-[30px] px-[20px] py-[80px] md:mx-[60px] min-[1440px]:mx-[98px] min-[1440px]:flex-row min-[1440px]:justify-between">
                 <div className="flex flex-col">
-                    <FooterHeading navigation={navigation('/')} />
+                    <FooterHeading />
                     <div className="min-[1440px]:flex">
                         <FooterPolicy />
                     </div>
@@ -109,12 +107,9 @@ const FooterBarRight = () => {
 const FooterHeading = (props) => {
     return (
         <div className="flex flex-col items-center justify-center gap-[12px] md:!items-start">
-            <img
-                src={icons.offical_logo}
-                alt="logo"
-                className="h-[48px] w-[212.082px]"
-                onClick={() => props.navigation('/')}
-            />
+            <a href="/">
+                <img src={icons.offical_logo} alt="logo" className="h-[48px] w-[212.082px]" />
+            </a>
             <div className="font-['Roboto'] text-[14px] font-medium leading-normal text-[#C6C6C6]">
                 support@starksport.finance
             </div>
