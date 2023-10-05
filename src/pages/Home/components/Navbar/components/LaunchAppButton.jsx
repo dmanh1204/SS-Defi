@@ -3,17 +3,19 @@ import { twMerge } from 'tailwind-merge';
 import { MouseEventHandler } from 'react';
 export default function LaunchAppButton({ styleButton, styleTitle, onClick }) {
     return (
-        <Button
+        <button
             style={{
                 background: 'linear-gradient(135deg, #24C3BC 0%, #ADFFFB 100%)',
             }}
             className={twMerge(
-                'button-hover-1 h-9 items-center justify-center gap-1 rounded-xl border-0 px-3 py-[6px] max-[340px]:hidden',
+                'button-hover-1 h-[36px] items-center justify-center gap-[4px] rounded-[12px] border-0 px-[12px] py-[6px] max-[340px]:hidden',
                 styleButton,
             )}
             onClick={onClick}
         >
-            <span className={twMerge("font-['Exo_2'] text-base font-bold text-[#1C1A2D]", styleTitle)}>Launch App</span>
-        </Button>
+            <span className={twMerge("font-['Roboto'] text-[16px] font-bold text-[#1C1A2D]", styleTitle)}>
+                Launch App
+            </span>
+        </button>
     );
 }

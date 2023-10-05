@@ -3,8 +3,8 @@ import { HeaderComponent } from './HeaderComponent';
 
 export default function Feature() {
     return (
-        <div className="flex flex-col gap-10 md:mx-[98px] min-[1440px]:gap-20">
-            <HeaderComponent title="OUR FEATURES" subTitle="The Best Ecosystem" />
+        <div className="flex flex-col gap-[30px] md:mx-[98px] min-[1440px]:gap-20">
+            <HeaderComponent title="FEATURES" subTitle="OUR FEATURES" />
             <FeatureCard />
         </div>
     );
@@ -35,17 +35,21 @@ const FeatureCard = () => {
     ];
 
     return (
-        <div className="inline-flex flex-col items-start gap-[40px] md:grid md:grid-cols-2 min-[1440px]:grid-cols-4">
+        <div className="inline-flex flex-col items-start gap-[30px] md:grid md:grid-cols-2 min-[1440px]:grid-cols-4">
             {featureCardItems.map((item, idx) => (
-                <div className="relative flex h-[417px] w-[342px] items-end md:w-[292px]" key={idx}>
+                <div className="relative flex h-[417px] w-[342px] items-end md:w-[309px]" key={idx}>
                     <div className="card-hover relative flex justify-center">
-                        <img src={icons.homepage.featureCard} alt="banner" className="rounded-3xl md:rounded" />
+                        <img
+                            src={icons.homepage.featureCard}
+                            alt="banner"
+                            className="rounded-[24px] md:rounded-[16px]"
+                        />
                         <div className="absolute bottom-[133px] flex h-[230px] w-[318px] flex-col items-center justify-center gap-[36px]">
                             <div className="test h-[180px] w-[180px]">
                                 <img src={item.icon} alt="banner" />
                             </div>
                             <div className="inline-flex flex-col items-center gap-[12px]">
-                                <div className="text-center font-['Roboto'] text-[24px] font-bold text-white">
+                                <div className="text-center font-['Roboto'] text-[16px] font-bold text-white md:text-[20px]">
                                     {item.title}
                                 </div>
                                 <div className="text-center font-['Roboto'] text-[14px] font-normal text-[#C6C6C6] md:max-w-[268px] md:text-[16px]">

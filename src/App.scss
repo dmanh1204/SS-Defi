@@ -60,3 +60,13 @@
         background: linear-gradient(90deg, #0b4c51 0%, #07051b 65.62%, #07051b 100%);
     }
 }
+
+.about-linear-background {
+    @media screen and (min-width: 768px) {
+        background: linear-gradient(0deg, #0b4c51 0%, #07051b 65.63%, #07051b 100%);
+    }
+
+    @media screen and (min-width: 1440px) {
+        background: linear-gradient(90deg, #0b4c51 0%, #07051b 65.62%, #07051b 100%);
+    }
+}

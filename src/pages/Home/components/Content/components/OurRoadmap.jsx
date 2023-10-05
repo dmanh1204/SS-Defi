@@ -1,11 +1,10 @@
 import React from 'react';
-import { Carousel, ConfigProvider } from 'antd';
 import icons from '../../../../../assets/icons';
 import { HeaderComponent } from './HeaderComponent';
+import { twMerge } from 'tailwind-merge';
 
 const contentStyle = {
     margin: 0,
-    height: '184px',
     color: '#fff',
     lineHeight: '36px',
     textAlign: 'center',
@@ -14,7 +13,7 @@ const contentStyle = {
 
 export default function OurRoadmap() {
     return (
-        <div className="min-[1440px]:gap-15 flex flex-col justify-center gap-10 md:mx-[60px] min-[1440px]:mx-[98px]">
+        <div className="flex flex-col justify-center gap-[30px] md:gap-[60px] md:mx-[60px] min-[1440px]:mx-[120px]">
             <HeaderComponent title="ROADMAP" subTitle="Our Roadmap" />
             <div className="max-w-[342px] md:hidden">
                 <RoadmapMobile />
@@ -29,65 +28,57 @@ export default function OurRoadmap() {
 const RoadmapDesktop = () => {
     const RoadmapDesktopItem = (props) => {
         return (
-            <div className={`flex gap-1`}>
-                {props.item.status ? (
-                    <img src={icons.doneIcon} alt="icons" />
-                ) : (
-                    <img src={icons.notDoneIcon} alt="icons" />
-                )}
-                <div className="text-start font-['Inter'] text-xs font-bold text-white min-[1440px]:text-base">
-                    {props.item.title}
+            <div className={twMerge('flex gap-[4px]', props.className)}>
+                <div
+                    className={twMerge(
+                        "text-start font-['Roboto'] text-[16px] font-normal text-white",
+                        props.titleStyle,
+                    )}
+                >
+                    {props.item.demoContent}
                 </div>
             </div>
         );
     };
     return (
-        <div className="relative h-[426px] min-w-[648px] min-[1440px]:h-[525.834px] min-[1440px]:min-w-[1247px]">
-            <img src={icons.mdRoadmap} alt="roadmap" className="min-[1440px]: absolute top-[156px] w-full" />
-            <div className="flex h-full w-full min-[1440px]:gap-[65px]">
-                {roadmapItemList.map((item, idx) => (
+        <div className="relative h-[265px] min-w-[648px] min-[1440px]:h-[412px] min-[1440px]:min-w-[1220px]">
+            <img src={icons.mdRoadmap} alt="roadmap" className="absolute w-full" />
+            <div className="flex flex-col justify-between h-full w-full min-[1440px]:gap-[65px]">
+                {/* {roadmapItemList.map((item, idx) => (
                     <div
                         key={idx}
                         className={`inline-flex max-w-[144px] flex-col items-start min-[1440px]:min-w-[208px] ${
-                            idx === 1 || idx === 3 ? 'justify-end' : 'justify-start'
+                            idx === 0 || idx === 2 || idx === 4 ? 'justify-end' : 'justify-start'
                         } gap-3 ${item.quarter === 'Q4' && 'pl-8'}`}
                     >
-                        {item.items.map((item, idx) => (
-                            <RoadmapDesktopItem key={idx} item={item} />
-                        ))}
+                        <RoadmapDesktopItem key={idx} item={item} />
                     </div>
-                ))}
+                ))} */}
+                <div className="flex justify-center gap-[106px] min-[1440px]:gap-[360px]">
+                    <RoadmapDesktopItem
+                        item={roadmapItemList[1]}
+                        className="w-[190px] pr-[18px]"
+                        titleStyle="text-center"
+                    />
+                    <RoadmapDesktopItem item={roadmapItemList[3]} className="w-[158px]" titleStyle="text-center" />
+                </div>
+                <div className="flex items-end justify-between">
+                    <RoadmapDesktopItem item={roadmapItemList[0]} className="w-[128px]" />
+                    <RoadmapDesktopItem
+                        item={roadmapItemList[2]}
+                        className="w-[176px] pl-[28px]"
+                        titleStyle="text-center"
+                    />
+                    <RoadmapDesktopItem item={roadmapItemList[4]} className="w-[153px]" titleStyle="text-right" />
+                </div>
             </div>
         </div>
     );
 };
 
-const RoadmapSliderMobile = () => {
-    return (
-        <ConfigProvider
-            theme={{
-                components: {
-                    Carousel: {
-                        dotHeight: 12,
-                        dotWidth: 12,
-                        borderRadius: 9999,
-                        dotWidthActive: 12,
-                    },
-                },
-            }}
-        >
-            <Carousel autoplay className="">
-                {roadmapItemList.map((item, idx) => (
-                    <RoadmapItem key={idx} item={item} />
-                ))}
-            </Carousel>
-        </ConfigProvider>
-    );
-};
-
 const RoadmapMobile = () => {
     return (
-        <div className="inline-flex flex-col items-start rounded-[24px]">
+        <div className="inline-flex flex-col items-start gap-[20px] rounded-[24px]">
             {roadmapItemList.map((item, idx) => (
                 <RoadmapItem key={idx} item={item} />
             ))}
@@ -97,19 +88,27 @@ const RoadmapMobile = () => {
 
 const RoadmapItem = (props) => {
     return (
-        <div className="mb-10 w-full">
-            <div style={contentStyle} className="flex h-[36px] w-full items-start gap-[20px] rounded-[24px] pb-[20px]">
+        <div className="w-full">
+            <div
+                style={contentStyle}
+                className={twMerge(
+                    'flex h-[56px] w-full items-start gap-[20px] pb-[20px]',
+                    props.item.date !== '2024' && 'border-b-[0.5px] border-b-[#24C3BC]',
+                )}
+            >
                 <div
                     style={{
                         background: 'linear-gradient(135deg, #24C3BC 0%, #ADFFFB 100%)',
                     }}
-                    className="h-[52px] flex flex-col items-start justify-center gap-[4px] rounded-2xl px-[20px] py-[12px]"
+                    className="flex flex-col items-start justify-center gap-[4px] rounded-2xl px-[20px] pt-[9px] pb-[8px]"
                 >
-                    <div className="font-['Exo_2'] text-[24px] font-bold leading-normal text-[#1C1A2D]">
+                    <div className="font-['Roboto'] text-[16px] font-bold leading-normal text-[#1C1A2D] whitespace-nowrap">
                         {props.item.quarter} - {props.item.date}
                     </div>
                 </div>
-                <div className="font-['Roboto'] text-base font-bold text-white">{props.item.demoContent}</div>
+                <div className="font-['Roboto'] text-start text-[14px] font-normal text-white leading-normal">
+                    {props.item.demoContent}
+                </div>
             </div>
         </div>
     );
@@ -119,124 +118,26 @@ const roadmapItemList = [
     {
         quarter: 'Q1',
         date: '2023',
-        demoContent: ' Lorem Ipsum is simply dummy text',
-        items: [
-            {
-                title: 'Website Launch',
-                status: true,
-            },
-            {
-                title: 'Project Loken Creation',
-                status: true,
-            },
-            {
-                title: 'Project Loken Creation',
-                status: true,
-            },
-            {
-                title: 'Search & Filters',
-                status: true,
-            },
-        ],
+        demoContent: 'Website Launch & Token Creation',
     },
     {
         quarter: 'Q2',
         date: '2023',
-        demoContent: ' Lorem Ipsum is simply dummy text',
-        items: [
-            {
-                title: 'NFT Launching',
-                status: true,
-            },
-            {
-                title: 'Development Of The Dapp Beta',
-                status: true,
-            },
-            {
-                title: 'Audit Certik',
-                status: true,
-            },
-        ],
+        demoContent: 'Audit & Development of Dapp Beta',
     },
     {
         quarter: 'Q3',
         date: '2023',
-        demoContent: ' Lorem Ipsum is simply dummy text',
-        items: [
-            {
-                title: 'Testnet Dapp',
-                status: true,
-            },
-            {
-                title: 'Swap',
-                status: true,
-            },
-            {
-                title: 'More Liquidity',
-                status: true,
-            },
-            {
-                title: 'Create/Manage Pairs + Liquidity Groups NFTs Event',
-                status: true,
-            },
-            {
-                title: 'Design NFTs, Create Events',
-                status: true,
-            },
-        ],
+        demoContent: 'Starksport Exchange & Marketplace',
     },
     {
         quarter: 'Q4',
         date: '2023',
-        demoContent: ' Lorem Ipsum is simply dummy text',
-        items: [
-            {
-                title: 'Launchpad',
-                status: false,
-            },
-            {
-                title: 'Zetachain',
-                status: true,
-            },
-            {
-                title: 'Ecosystem',
-                status: true,
-            },
-            {
-                title: 'Mainnet Dapp',
-                status: true,
-            },
-            {
-                title: 'Trading Chart',
-                status: false,
-            },
-        ],
+        demoContent: 'Private Round & Starksport Launchpad',
     },
     {
         quarter: 'Q1',
         date: '2024',
-        demoContent: ' Lorem Ipsum is simply dummy text',
-        items: [
-            {
-                title: 'Airdrop DAO',
-                status: false,
-            },
-            {
-                title: 'Public Round',
-                status: false,
-            },
-            {
-                title: 'Opening DAO',
-                status: false,
-            },
-            {
-                title: 'DAO Treasury',
-                status: false,
-            },
-            {
-                title: 'Starksport Multichain',
-                status: false,
-            },
-        ],
+        demoContent: 'Public Round & Starksport Multichain',
     },
 ];

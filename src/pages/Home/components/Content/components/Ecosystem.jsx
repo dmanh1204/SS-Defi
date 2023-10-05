@@ -4,12 +4,12 @@ import { HeaderComponent } from './HeaderComponent';
 
 export default function Ecosystem() {
     return (
-        <div className="flex w-full flex-col gap-[60px] px-[24px] md:mx-[98px] min-[1440px]:gap-[80px]">
-            <HeaderComponent title="ECOSYSTEM" subTitle="StarkSport Ecosystem" />
+        <div className="flex w-full flex-col gap-[30px] px-[24px] md:px-[60px] min-[1440px]:gap-[80px] min-[1440px]:px-[120px]">
+            <HeaderComponent title="ECOSYSTEM" subTitle="Our Ecosystem" />
             <div className="flex items-center justify-center">
                 <EcosystemBanner className="max-w-[342px] md:hidden" />
-                <EcosystemBannerMd className="hidden max-w-[469px] md:flex min-[1440px]:hidden" />
-                <EcosystemBannerDesktop className="hidden min-[1440px]:flex" />
+                <EcosystemBannerMd className="hidden max-w-[448px] md:flex min-[1440px]:hidden" />
+                <EcosystemBannerDesktop className="hidden min-[1440px]:flex max-w-[1200px]" />
             </div>
             <div className="md:hidden">
                 <EcosystemListCardMobile />
@@ -25,7 +25,7 @@ const EcosystemCard = ({ icon, title, description }) => {
     return (
         <div
             style={{ background: 'rgba(255, 255, 255, 0.10)' }}
-            className="flex min-h-[90px] w-full items-center gap-[20px] rounded-[16px] p-[20px] md:max-w-[350px]"
+            className="flex min-h-[80px] items-center gap-[15px] rounded-[16px] p-[15px] w-full md:w-[316.5px]"
         >
             <div className="flex h-[50px] min-w-[50px] items-center justify-center rounded-[12px] bg-[#24C3BC]">
                 <img src={icon} alt="ecosystem 1" className="max-w-[28px]" />
@@ -53,7 +53,7 @@ const EcosystemListCardMobile = () => {
 
 const EcosystemListCardDesktop = () => {
     return (
-        <div className="flex flex-wrap content-center items-center justify-center gap-[20px] md:max-w-[648px]">
+        <div className="flex flex-wrap content-center items-center justify-center gap-[15px] md:max-w-[648px]">
             {ecosystemCardItems.map((item, idx) => (
                 <EcosystemCard key={idx} icon={item.icon} title={item.title} description={item.subtitle} />
             ))}
