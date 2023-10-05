@@ -34,7 +34,7 @@ const HomepageFooterMobile = (props) => {
                 <div className="hidden md:flex justify-between">
                     <FooterBarLeft />
                     <FooterBarRight />
-                    <div className="flex flex-col gap-[10px]">
+                    <div className="flex flex-col gap-[10px] justify-end">
                         <div className="whitespace-nowrap font-['Roboto'] text-[16px] font-bold text-white">
                             Community
                         </div>
@@ -53,18 +53,22 @@ const HomepageFooterDesktop = () => {
             style={{ background: 'rgba(28, 26, 45, 0.6)' }}
             className="fix bottom-0 w-screen items-center border-t-[0.5px] border-[#C6C6C6]"
         >
-            <div className="flex flex-col gap-[30px] px-[20px] py-[80px] md:mx-[60px] min-[1440px]:mx-[98px] min-[1440px]:flex-row min-[1440px]:justify-between">
+            <div className="flex flex-col gap-[30px] mx-[20px] py-[80px] md:mx-[60px] min-[1440px]:mx-[120px] min-[1440px]:flex-row min-[1440px]:justify-between">
                 <div className="flex flex-col">
                     <FooterHeading />
                     <div className="min-[1440px]:flex">
                         <FooterPolicy />
                     </div>
                 </div>
-                <FooterBarLeft />
-                <FooterBarRight />
-                <div className="flex flex-col gap-[10px]">
-                    <div className="whitespace-nowrap font-['Roboto'] text-[16px] font-bold text-white">Community</div>
-                    <SocialCard />
+                <div className="flex gap-[60px]">
+                    <FooterBarLeft />
+                    <FooterBarRight />
+                    <div className="flex flex-col gap-[10px] justify-end">
+                        <div className="whitespace-nowrap font-['Roboto'] text-[16px] font-bold text-white">
+                            Community
+                        </div>
+                        <SocialCard />
+                    </div>
                 </div>
             </div>
         </div>
@@ -110,7 +114,7 @@ const FooterHeading = (props) => {
             <a href="/">
                 <img src={icons.offical_logo} alt="logo" className="h-[48px] w-[212.082px]" />
             </a>
-            <div className="font-['Roboto'] text-[14px] font-medium leading-normal text-[#C6C6C6]">
+            <div className="font-['Roboto'] text-[16px] font-normal leading-normal text-[#C6C6C6]">
                 support@starksport.finance
             </div>
         </div>
@@ -119,7 +123,7 @@ const FooterHeading = (props) => {
 
 const FooterPolicy = () => {
     return (
-        <div className="font-['Roboto'] text-[14px] font-normal leading-normal text-[#C6C6C6] text-center">
+        <div className="font-['Roboto'] text-[16px] font-normal leading-normal text-[#C6C6C6] text-center">
             2023 © Copyright STARKSPORT. All Rights Reserved
         </div>
     );
@@ -163,7 +167,7 @@ const SocialCard = () => {
                     rel="noreferrer"
                     key={item.id}
                     style={{ background: 'rgba(255, 255, 255, 0.20)' }}
-                    className="social-button-hover flex h-[36px] w-[36px] rounded-[16px] p-[4px] min-[375px]:h-[56px] min-[375px]:w-[56px] min-[375px]:p-[16px] md:h-[48px] md:w-[48px]"
+                    className="social-button-hover flex h-[36px] w-[36px] rounded-[16px] p-[4px] min-[375px]:h-[56px] min-[375px]:w-[56px] min-[375px]:p-[16px] md:h-[56px] md:w-[56px]"
                 >
                     <img src={item.icon} alt={item.id} />
                 </a>

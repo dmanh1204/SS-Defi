@@ -13,7 +13,7 @@ const contentStyle = {
 
 export default function OurRoadmap() {
     return (
-        <div className="flex flex-col justify-center gap-[30px] md:gap-[60px] md:mx-[60px] min-[1440px]:mx-[120px]">
+        <div className="flex flex-col justify-center gap-[30px] md:gap-[60px] md:mx-[60px] min-[1440px]:gap-[80px] min-[1440px]:mx-[120px]">
             <HeaderComponent title="ROADMAP" subTitle="Our Roadmap" />
             <div className="max-w-[342px] md:hidden">
                 <RoadmapMobile />
@@ -42,18 +42,13 @@ const RoadmapDesktop = () => {
     };
     return (
         <div className="relative h-[265px] min-w-[648px] min-[1440px]:h-[412px] min-[1440px]:min-w-[1220px]">
-            <img src={icons.mdRoadmap} alt="roadmap" className="absolute w-full" />
+            <div className="hidden min-[1440px]:flex">
+                <img src={icons.desktopRoadmap} alt="roadmap" className="absolute w-full" />
+            </div>
+            <div className="min-[1440px]:hidden">
+                <img src={icons.mdRoadmap} alt="roadmap" className="absolute w-full" />
+            </div>
             <div className="flex flex-col justify-between h-full w-full min-[1440px]:gap-[65px]">
-                {/* {roadmapItemList.map((item, idx) => (
-                    <div
-                        key={idx}
-                        className={`inline-flex max-w-[144px] flex-col items-start min-[1440px]:min-w-[208px] ${
-                            idx === 0 || idx === 2 || idx === 4 ? 'justify-end' : 'justify-start'
-                        } gap-3 ${item.quarter === 'Q4' && 'pl-8'}`}
-                    >
-                        <RoadmapDesktopItem key={idx} item={item} />
-                    </div>
-                ))} */}
                 <div className="flex justify-center gap-[106px] min-[1440px]:gap-[360px]">
                     <RoadmapDesktopItem
                         item={roadmapItemList[1]}

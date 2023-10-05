@@ -1,19 +1,19 @@
 import {
     ComingSoonPage,
-    FarmsPage,
+    // FarmsPage,
     LiquidityPage,
     NFTPage,
-    PoolsPage,
+    // PoolsPage,
     SwapPage,
-    LendingPage,
-    AirdropPage,
-    InfoPage,
+    // LendingPage,
+    // AirdropPage,
+    // InfoPage,
     FaucetPage,
 } from '../pages';
-import TestnetTokenPage from '../pages/ClaimTestnetToken';
+// import TestnetTokenPage from '../pages/ClaimTestnetToken';
 import HomePage from '../pages/Home';
-import HomePageV2 from '../pages/HomeV2';
-import HomePageV3 from '../pages/HomeV3';
+// import HomePageV2 from '../pages/HomeV2';
+// import HomePageV3 from '../pages/HomeV3';
 import PrivateSalePage from '../pages/PrivateSale';
 import { route } from './configs';
 

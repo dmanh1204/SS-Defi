@@ -1,3 +1,4 @@
+import LaunchAppButton from '../../Navbar/components/LaunchAppButton';
 import { OfficalBanner } from './Banner';
 
 export default function Introduction() {
@@ -14,7 +15,7 @@ export default function Introduction() {
 const BannerContent = () => {
     return (
         <div className="flex flex-col items-center gap-[24px] px-[24px] md:max-w-[600px] md:px-0 min-[1440px]:max-w-[657px]">
-            <div className="self-stretch text-center font-['Roboto'] text-[30px] font-bold leading-normal min-[1440px]:text-start min-[1440px]:text-[68px]">
+            <div className="self-stretch text-center font-['Roboto'] text-[30px] font-bold leading-tight min-[1440px]:text-start min-[1440px]:text-[68px]">
                 <p className="min-[1440px]:text-start">
                     LEARN, CREATE, EXPLORE & COLLECT WITH{' '}
                     <span className="text-gradient min-[1440px]:text-[64px]">STARKSPORT</span>
@@ -24,37 +25,29 @@ const BannerContent = () => {
                 Starksport is an all-in-one Incubation Hub with a full stack DeFi platform across blockchain networks.
                 We provide exclusive services including IDO Launchpad, NFT Auction, Marketplace and Exchange.
             </div>
-            <CardInfo />
+            {/* <CardInfo /> */}
             <div className="flex w-full items-center justify-center gap-[20px] md:flex-row min-[1440px]:justify-start">
                 <div className="">
-                    <BannerButtonLaunchApp />
+                    <LaunchAppButton styleButton="py-[12px] px-[24px] rounded-[16px] h-[48px] w-[175px]" />
                 </div>
                 <div className="">
-                    <BannerButtonAboutUs />
+                    <BannerButtonDocument />
                 </div>
             </div>
         </div>
     );
 };
 
-const BannerButtonLaunchApp = () => {
+const BannerButtonDocument = () => {
     return (
-        <div
-            style={{
-                background: `linear-gradient(135deg, #24C3BC 0%, #ADFFFB 100%)`,
-            }}
-            className="button-hover-1 flex items-center justify-center gap-[4px] self-stretch rounded-[16px] px-[20px] py-[8px] w-[165px] md:w-[189px]"
+        <a
+            href="https://starksport.gitbook.io/starksport/"
+            target="_blank"
+            rel="noreferrer"
+            className="button-hover-3 flex items-center justify-center gap-[4px] self-stretch rounded-[16px] border-[2px] border-[#24C3BC] bg-transparent px-[20px] py-[12px] w-[175px] md:w-[189px]"
         >
-            <div className="font-['Roboto'] text-[16px] font-bold text-[#1C1A2D]">Launch App</div>
-        </div>
-    );
-};
-
-const BannerButtonAboutUs = () => {
-    return (
-        <div className="button-hover-3 flex items-center justify-center gap-[4px] self-stretch rounded-[16px] border-[2px] border-[#24C3BC] bg-transparent px-[20px] py-[8px] w-[165px] md:w-[189px]">
-            <div className="font-['Roboto'] text-[16px] font-bold text-white">More About Us</div>
-        </div>
+            <div className="font-['Roboto'] text-[16px] font-bold text-white">Documentation</div>
+        </a>
     );
 };
 

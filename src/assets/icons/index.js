@@ -1,60 +1,13 @@
-// import logo from "./logo.png";
-
-/** Drawer Icon */
-import sendmail from './drawer.send-mail.png';
-import create from './drawer.create.png';
-import lock from './drawer.locked.png';
-
-/** Fan Token Logo */
-import logo1 from './demo_logo_token_1.jpg';
-import logo2 from './demo_logo_token_2.jpeg';
-import logo3 from './demo_logo_token_3.jpeg';
-import logo4 from './demo_logo_token_4.jpeg';
-import logo5 from './demo_logo_token_5.jpeg';
-
-import wallet_argentx_logo from './argent.png';
-import wallet_braavos_logo from './braavos.jpg';
-import card_background from './card_background.jpg';
 import background from './background.png';
-import background_light from './background_light.png';
-import wallet_okx_logo from './wallet_okx_logo.png';
-
-import ic_close from './svg/close.svg';
 import offical_logo from './stark_logo.png';
-import trending_logo from './svg/Trending.svg';
-import asernal_token from './svg/AsernalFanToken.svg';
 
 /** Social Network Icon */
-import browserIcon from './svg/social/browser.svg';
-import discordIcon from './svg/social/discord.svg';
-import mediumIcon from './svg/social/medium.svg';
-import telegramIcon from './svg/social/telegram.svg';
-import twitterIcon from './svg/social/twitter.svg';
 import githubIcon from './svg/social/github.svg';
-
+import telegramFooter from './svg/footer/telegram.svg';
+import discordFooter from './svg/footer/discord.svg';
+import twitterFooter from './svg/footer/twitter.svg';
+import mediumFooter from './svg/footer/medium.svg';
 import mobileMenuIcon from './svg/MobileMenu.svg';
-
-/** Arrow icons */
-import arrowUp from './svg/arrow_up.svg';
-import arrowDown from './svg/arrow_down.svg';
-import arrowLeft from './svg/arrow_left.svg';
-import arrowRight from './svg/arrow_right.svg';
-
-/** Navbar icons */
-import aboutUsIcon from './svg/about_us.svg';
-import auditIcon from './svg/audit.svg';
-import whitepaperIcon from './svg/whitepaper.svg';
-import contactUsIcon from './svg/contact_us.svg';
-import kycIcon from './svg/kyc.svg';
-import saleIcon from './svg/sale.svg';
-import airdropIcon from './svg/airdrop.svg';
-import lockingIcon from './svg/locking.svg';
-import telegramNavbar from './svg/telegram_navbar.svg';
-import discordNavbar from './svg/discord_navbar.svg';
-import twitterNavbar from './svg/twitter_navbar.svg';
-import mediumNavbar from './svg/medium_navbar.svg';
-import redditNavbar from './svg/reddit_navbar.svg';
-import startsportLogo from './Starksport@3x.png';
 
 /** Homepage content */
 import bannerHomepageMobile from './BannerHompage.png';
@@ -66,18 +19,14 @@ import kyc3 from './1_airdrop.png';
 import kyc4 from './1_lock.png';
 import audit1 from './svg/audit_1.svg';
 import audit2 from './svg/audit_2.svg';
-import telegramFooter from './svg/footer/telegram.svg';
-import discordFooter from './svg/footer/discord.svg';
-import twitterFooter from './svg/footer/twitter.svg';
-import mediumFooter from './svg/footer/medium.svg';
-import redditFooter from './svg/footer/reddit.svg';
+import EXCHANGE from './svg/exchange.svg';
+import MARKETPLACE from './svg/marketplace.svg';
 
-import doneIcon from './svg/done_icon.svg';
-import notDoneIcon from './svg/notdone_icon.svg';
 import mdRoadmap from './md_roadmap.png';
+import desktopRoadmap from './desktop_roadmap.png';
 import BG_OFFICIAL from './svg/background_offical.svg';
-import CERTIK_LOGO from './svg/certik_logo.svg';
-import STARKGUARDIAN_LOGO from './svg/starkguardian_logo.svg';
+import CERTIK_LOGO from './certik_logo.png';
+import STARKGUARDIAN_LOGO from './starkguar_logo.png';
 import ECLIP_SHADOW from './svg/eclipse_shadow.svg';
 import ECOSYSTEM_MOBILE from './ecosystem_mobile.png';
 import ECOSYSTEM_MD from './ecosystem_md.png';
@@ -107,63 +56,9 @@ import OPSIDE from './partners/opside.png';
 import LAYERSWAP from './partners/layerswap.png';
 
 const icons = {
-    images: {
-        // logo,
-        wallet_argentx_logo,
-        wallet_braavos_logo,
-        wallet_okx_logo,
-    },
-    drawer: {
-        sendmail,
-        create,
-        lock,
-    },
-    demo: {
-        logo1,
-        logo2,
-        logo3,
-        logo4,
-        logo5,
-    },
-    ic_close,
     offical_logo,
-    card_background,
     background,
-    background_light,
-    trending_logo,
-    asernal_token,
     mobileMenuIcon,
-    doneIcon,
-    notDoneIcon,
-    arrow: {
-        arrowUp,
-        arrowDown,
-        arrowLeft,
-        arrowRight,
-    },
-    social: {
-        browserIcon,
-        discordIcon,
-        mediumIcon,
-        telegramIcon,
-        twitterIcon,
-    },
-    navbar: {
-        aboutUsIcon,
-        auditIcon,
-        whitepaperIcon,
-        contactUsIcon,
-        kycIcon,
-        saleIcon,
-        airdropIcon,
-        lockingIcon,
-        telegramNavbar,
-        discordNavbar,
-        twitterNavbar,
-        mediumNavbar,
-        redditNavbar,
-        startsportLogo,
-    },
     homepage: {
         bannerHomepageMobile,
         aboutHomepageBanner,
@@ -178,10 +73,10 @@ const icons = {
         discordFooter,
         twitterFooter,
         mediumFooter,
-        redditFooter,
         githubIcon,
     },
     mdRoadmap,
+    desktopRoadmap,
     BG_OFFICIAL,
     CERTIK_LOGO,
     STARKGUARDIAN_LOGO,
@@ -189,6 +84,8 @@ const icons = {
     ECOSYSTEM_MOBILE,
     ECOSYSTEM_MD,
     ECOSYSTEM_DESKTOP,
+    EXCHANGE,
+    MARKETPLACE,
     ecosystem: {
         ECOSYSTEM_1,
         ECOSYSTEM_2,

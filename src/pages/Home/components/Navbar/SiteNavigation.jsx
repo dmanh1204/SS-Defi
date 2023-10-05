@@ -1,16 +1,12 @@
-// import ModalWallet from "../../../../layouts/header/modal-wallet";
-// import useModal from "../../../../layouts/header/useModal";
-import { Link, useNavigate } from 'react-router-dom';
 import icons from '../../../../assets/icons';
 import Logo from './components/Logo';
 import LaunchAppButton from './components/LaunchAppButton';
 import MobileMenuButton from './components/MobileMenuButton';
-import { DropdownMenu } from './components/DropdownMenu';
 import { Popover, Transition } from '@headlessui/react';
 import { Fragment, useState } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import useModal from '../../../../components/ModalWallet/useModal';
-import ModalConnectApp from './components/ModalWallet';
+import Tooltip from 'antd/es/tooltip';
+import LaunchAppModal from './components/LaunchAppModal';
 
 export default function SiteNavigation(props) {
     return (
@@ -26,7 +22,6 @@ export default function SiteNavigation(props) {
 }
 
 const MobileSiteNavigation = () => {
-    const { isShowing, toggle } = useModal();
     return (
         <div
             style={{ background: 'rgba(255, 255, 255, 0.1)' }}
@@ -39,7 +34,7 @@ const MobileSiteNavigation = () => {
                             <Logo className="h-[30px]" />
                         </div>
                         <div className="flex items-center gap-3">
-                            <LaunchAppButton onClick={toggle} />
+                            <LaunchAppButton />
                             <MobileMenuButton />
                         </div>
                         <Transition
@@ -87,157 +82,45 @@ const MobileSiteNavigation = () => {
                     </>
                 )}
             </Popover>
-            <ModalConnectApp isShowing={isShowing} hide={toggle} />
         </div>
     );
 };
 
 const DesktopSiteNavigation = (props) => {
-    const { isShowing, toggle } = useModal();
     return (
         <div
             style={{ background: 'rgba(255, 255, 255, 0.1)' }}
-            className="fixed top-0 z-[9999] flex h-[96px] w-screen justify-between px-[98px] py-[24px] backdrop-blur-[30px]"
+            className="fixed top-0 z-[9999] flex h-[96px] w-screen justify-between px-[120px] py-[24px] backdrop-blur-[30px]"
         >
             <div className="flex items-center">
                 <Logo className="h-[48px]" />
             </div>
-            <div className="hidden items-center text-[20px] font-bold md:flex md:gap-[5px] lg:gap-[40px]">
+            <div className="hidden items-center text-[20px] font-bold md:flex md:gap-[5px] lg:gap-[20px]">
                 <div className="button-navbar-hover flex w-fit cursor-pointer items-center font-['Roboto'] text-[16px] md:text-[12px] min-[1000px]:text-[16px] font-bold text-white max-[815px]:hidden px-[20px] py-[12px]">
-                    <AnchorLink className="text-white hover:text-[#24c3bc]" href="#about">
+                    <AnchorLink className="text-white" href="#about">
                         About
                     </AnchorLink>
                 </div>
                 <div className="button-navbar-hover flex w-fit cursor-pointer items-center font-['Roboto'] text-[16px] md:text-[12px] min-[1000px]:text-[16px] font-bold text-white max-[815px]:hidden px-[20px] py-[12px]">
-                    <AnchorLink className="text-white hover:text-[#24c3bc]" href="#features">
+                    <AnchorLink className="text-white" href="#features">
                         Features
                     </AnchorLink>
                 </div>
                 <div className="button-navbar-hover flex w-fit cursor-pointer items-center font-['Roboto'] text-[16px] md:text-[12px] min-[1000px]:text-[16px] font-bold text-white max-[815px]:hidden px-[20px] py-[12px]">
-                    <AnchorLink className="text-white hover:text-[#24c3bc]" href="#ecosystem">
+                    <AnchorLink className="text-white" href="#ecosystem">
                         Ecosystem
                     </AnchorLink>
                 </div>
                 <div className="button-navbar-hover flex w-fit cursor-pointer items-center font-['Roboto'] text-[16px] md:text-[12px] min-[1000px]:text-[16px] font-bold text-white max-[815px]:hidden px-[20px] py-[12px]">
-                    <AnchorLink className="text-white hover:text-[#24c3bc]" href="#backed">
+                    <AnchorLink className="text-white" href="#backed">
                         {' '}
-                        Backed & Parnerts
+                        Backers & Partners
                     </AnchorLink>
                 </div>
-                {/* <AboutMenu />
-                <FeaturesMenu />
-                <CommunityMenu /> */}
             </div>
             <div className="flex items-center gap-3">
-                <LaunchAppButton onClick={toggle} styleButton="py-[12px] px-[24px] rounded-[16px] h-[48px]" />
+                <LaunchAppButton styleButton="py-[12px] px-[24px] rounded-[16px] h-[48px] w-[175px]" />
             </div>
-            <ModalConnectApp isShowing={isShowing} hide={toggle} />
         </div>
     );
 };
-
-// const AboutMenu = (className) => {
-//     const aboutMenuItems = [
-//         {
-//             id: 'about',
-//             label: 'About us',
-//             href: '/',
-//             icon: icons.navbar.aboutUsIcon,
-//         },
-//         {
-//             id: 'audit',
-//             label: 'Audit',
-//             href: '/',
-//             icon: icons.navbar.auditIcon,
-//         },
-//         {
-//             id: 'whitepaper',
-//             label: 'Whitepaper',
-//             href: '/',
-//             icon: icons.navbar.whitepaperIcon,
-//         },
-//         {
-//             id: 'contact',
-//             label: 'Contact us',
-//             href: '/',
-//             icon: icons.navbar.contactUsIcon,
-//         },
-//     ];
-
-//     return <DropdownMenu className="text-[16px] md:text-[14px]" items={aboutMenuItems} heading={'About'} />;
-// };
-
-// const FeaturesMenu = () => {
-//     const featuresMenuItems = [
-//         {
-//             id: 'kyc',
-//             label: 'KYC',
-//             href: '/',
-//             icon: icons.navbar.kycIcon,
-//         },
-//         {
-//             id: 'sale',
-//             label: 'Private/Public sale',
-//             href: '/',
-//             icon: icons.navbar.saleIcon,
-//         },
-//         {
-//             id: 'airdrop',
-//             label: 'Airdrop',
-//             href: '/',
-//             icon: icons.navbar.airdropIcon,
-//         },
-//         {
-//             id: 'locking',
-//             label: 'Locking',
-//             href: '/',
-//             icon: icons.navbar.lockingIcon,
-//         },
-//     ];
-
-//     return <DropdownMenu className="text-[16px] md:text-[14px" items={featuresMenuItems} heading={'Features'} />;
-// };
-
-// const CommunityMenu = () => {
-//     const communityMenuItems = [
-//         {
-//             id: 'telegram',
-//             label: 'Telegram',
-//             href: '/',
-//             icon: icons.navbar.telegramNavbar,
-//         },
-//         {
-//             id: 'discord',
-//             label: 'Discord',
-//             href: '/',
-//             icon: icons.navbar.discordNavbar,
-//         },
-//         {
-//             id: 'twitter',
-//             label: 'Twitter',
-//             href: '/',
-//             icon: icons.navbar.twitterNavbar,
-//         },
-//         {
-//             id: 'medium',
-//             label: 'Medium',
-//             href: '/',
-//             icon: icons.navbar.mediumNavbar,
-//         },
-//         {
-//             id: 'reddit',
-//             label: 'Reddit',
-//             href: '/',
-//             icon: icons.navbar.redditNavbar,
-//         },
-//     ];
-
-//     return (
-//         <DropdownMenu
-//             className="text-[16px] md:text-[14px"
-//             items={communityMenuItems}
-//             heading={'Community'}
-//             dropdownClassName="md:w-[260px]"
-//         />
-//     );
-// };

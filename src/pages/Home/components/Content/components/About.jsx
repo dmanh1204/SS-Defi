@@ -1,4 +1,4 @@
-import icons from '../../../../../assets/icons';
+import { useState } from 'react';
 import { AboutUsBanner } from './Banner';
 import { HeaderComponent } from './HeaderComponent';
 
@@ -21,7 +21,7 @@ const AboutUsDesktop = () => {
             <div className="flex max-w-[540px] flex-col justify-between gap-[20px]">
                 <div className="flex flex-col gap-[24px]">
                     <HeaderComponent
-                        title="WHAT IS STARKSPORT"
+                        title="WHAT IS STARKSPORT?"
                         subTitle="Decentralized Launchpad"
                         className="items-start"
                     />
@@ -59,8 +59,8 @@ const AboutUsMobile = () => {
 
 const AboutUsButton = () => {
     return (
-        <div className="button-hover-2 flex items-center justify-center gap-[4px] self-stretch rounded-[16px] bg-white px-[20px] py-[12px] w-full md:w-[189px] min-[1440px]:w-[156px] min-[1440px]:px-[24px]">
-            <div className="font-['Exo_2'] text-[16px] font-bold text-[#07051B]">More About Us</div>
+        <div className="button-hover-2 flex items-center justify-center gap-[4px] self-stretch rounded-[16px] bg-white px-[20px] py-[12px] w-full md:w-[175px] min-[1440px]:px-[24px]">
+            <div className="font-['Roboto'] text-[16px] font-bold text-[#07051B]">More About Us</div>
         </div>
     );
 };

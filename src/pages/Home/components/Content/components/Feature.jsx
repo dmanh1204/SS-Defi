@@ -35,16 +35,19 @@ const FeatureCard = () => {
     ];
 
     return (
-        <div className="inline-flex flex-col items-start gap-[30px] md:grid md:grid-cols-2 min-[1440px]:grid-cols-4">
+        <div className="inline-flex flex-col items-start gap-[40px] md:grid md:grid-cols-2 min-[1440px]:grid-cols-4 min-[1440px]:max-w-[1200px]">
             {featureCardItems.map((item, idx) => (
-                <div className="relative flex h-[417px] w-[342px] items-end md:w-[309px]" key={idx}>
+                <div
+                    className="relative flex h-[417px] w-[350px] items-end md:w-[309px] min-[1440px]:w-[270px]"
+                    key={idx}
+                >
                     <div className="card-hover relative flex justify-center">
                         <img
                             src={icons.homepage.featureCard}
                             alt="banner"
                             className="rounded-[24px] md:rounded-[16px]"
                         />
-                        <div className="absolute bottom-[133px] flex h-[230px] w-[318px] flex-col items-center justify-center gap-[36px]">
+                        <div className="absolute bottom-[80px] flex h-[230px] w-[318px] flex-col items-center justify-center gap-[36px]">
                             <div className="test h-[180px] w-[180px]">
                                 <img src={item.icon} alt="banner" />
                             </div>
