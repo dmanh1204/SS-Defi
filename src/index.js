@@ -5,8 +5,4 @@ import GlobalStyles from './core/scss';
 import 'antd/dist/antd.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-    <GlobalStyles>
-        <App />
-    </GlobalStyles>,
-);
+root.render(<App />);
