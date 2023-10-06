@@ -5,7 +5,6 @@ const HomePage = () => {
     return (
         <div className="text-white">
             <MainContentHomepage />
-            <div>12313</div>
         </div>
     );
 };

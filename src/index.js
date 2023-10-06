@@ -1,16 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import GlobalStyles from './core/scss';
-import { Provider } from 'react-redux';
-import store from './redux';
-import 'antd/dist/antd.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-    <GlobalStyles>
-        <Provider store={store}>
-            <App />
-        </Provider>
-    </GlobalStyles>,
-);
+root.render(<App />);
