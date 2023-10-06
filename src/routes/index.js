@@ -18,7 +18,11 @@ import PrivateSalePage from '../pages/PrivateSale';
 import { route } from './configs';
 
 const publicRoutes = [
+<<<<<<< HEAD
     { path: route.home, element: SwapPage },
+=======
+    { path: route.home, element: HomePage },
+>>>>>>> 84b5f16 (update homepage)
     { path: route.nft, element: NFTPage },
     // { path: route.airdrop, element: AirdropPage },
     { path: route.privatesale, element: PrivateSalePage },
