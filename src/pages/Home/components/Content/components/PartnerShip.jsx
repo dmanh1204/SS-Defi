@@ -55,7 +55,7 @@ const partners = [
     },
     {
         image: icons.partners.ZETACHAIN,
-        href: 'https://www.zetachain.com/vi-VN',
+        href: 'https://www.zetachain.com/',
     },
     {
         image: icons.partners.OPSIDE,
