@@ -8,8 +8,11 @@ export default function PartnerShip() {
             <div className="min-[1440px]:hidden">
                 <ParterContentMobile />
             </div>
-            <div className="hidden min-[1440px]:flex">
+            <div className="hidden min-[1440px]:flex min-[1920px]:!hidden">
                 <PartnerContentDesktop />
+            </div>
+            <div className="hidden min-[1920px]:flex">
+                <PartnerContentDesktopLagest />
             </div>
         </div>
     );
@@ -28,6 +31,28 @@ const partners = [
     icons.partners.ZETACHAIN,
     icons.partners.OPSIDE,
     icons.partners.LAYERSWAP,
+];
+
+const partnersFull = [
+    icons.partners.OKX,
+    icons.partners.LAYERSWAP,
+    icons.partners.ZETACHAIN,
+    icons.partners.OPSIDE,
+    icons.partners.TASKON,
+    icons.partners.DMAIL,
+    icons.partners.DEFILAMA,
+    icons.partners.HASHSTACK,
+    icons.partners.GALXE,
+    icons.partners.SITHSWAP,
+    icons.partners.TRANTOR,
+    icons.partners.CARMINE,
+    icons.partners.MISES,
+    icons.partners.LINKE,
+    icons.partners.METABIT,
+    icons.partners.BLOCKLIT,
+    icons.partners.KLEINLABS,
+    icons.partners.WEB3NOVA,
+    icons.partners.OXGEN,
 ];
 
 const ParterContentMobile = () => {
@@ -54,10 +79,20 @@ const PartnerContentDesktop = () => {
     );
 };
 
+const PartnerContentDesktopLagest = () => {
+    return (
+        <div className="inline-flex max-w-[1200px] flex-wrap content-center items-center justify-center gap-[40px]">
+            {partnersFull.map((item, idx) => (
+                <SponserCardMockup key={idx} icon={item} />
+            ))}
+        </div>
+    );
+};
+
 const SponserCardMockup = ({ icon }) => {
     return (
-        <div className="flex h-[80px] w-[165px] items-center justify-center rounded-2xl border-[0.5px] border-[#C6C6C6] bg-[#07051B] max-[350px]:w-[150px] md:h-[100px] md:w-[200px]">
-            <img src={icon} alt="partner" className="w-[120px] h-[60px]" />
+        <div className="flex h-[80px] w-[160px] items-center justify-center rounded-[16px] border-[0.5px] border-[#C6C6C6] bg-[#07051B] max-[350px]:w-[150px] md:h-[100px] md:w-[200px]">
+            <img src={icon} alt="partner" className="w-[120px] h-[60px] md:w-[160px] md:h-[80px]" />
         </div>
     );
 };

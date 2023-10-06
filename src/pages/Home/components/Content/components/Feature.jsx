@@ -14,7 +14,7 @@ const FeatureCard = () => {
     const featureCardItems = [
         {
             icon: icons.homepage.kyc2,
-            title: 'Public/Private Sale',
+            title: 'Public / Private Sale',
             subtitle: 'Commit your funds to get IDO tokens from projects',
         },
         {
@@ -51,7 +51,7 @@ const FeatureCard = () => {
                             <div className="test h-[180px] w-[180px]">
                                 <img src={item.icon} alt="banner" />
                             </div>
-                            <div className="inline-flex flex-col items-center gap-[12px]">
+                            <div className="inline-flex flex-col items-center gap-[12px] px-[20px]">
                                 <div className="text-center font-['Roboto'] text-[16px] font-bold text-white md:text-[20px]">
                                     {item.title}
                                 </div>

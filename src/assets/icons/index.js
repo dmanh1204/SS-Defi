@@ -54,6 +54,13 @@ import TASKON from './partners/taskon.png';
 import ZETACHAIN from './partners/zetachain.png';
 import OPSIDE from './partners/opside.png';
 import LAYERSWAP from './partners/layerswap.png';
+import OKX from './partners/OKX.svg';
+import DMAIL from './partners/DMAIL.svg';
+import DEFILAMA from './partners/DEFILAMA.svg';
+import BLOCKLIT from './partners/BLOCKLIT.svg';
+import KLEINLABS from './partners/KLEINLABS.svg';
+import WEB3NOVA from './partners/WEB3NOVA.svg';
+import OXGEN from './partners/OXGEN.svg';
 
 const icons = {
     offical_logo,
@@ -108,6 +115,13 @@ const icons = {
         ZETACHAIN,
         OPSIDE,
         LAYERSWAP,
+        OKX,
+        DMAIL,
+        DEFILAMA,
+        BLOCKLIT,
+        KLEINLABS,
+        WEB3NOVA,
+        OXGEN,
     },
 };
 

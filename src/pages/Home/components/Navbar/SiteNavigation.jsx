@@ -1,12 +1,9 @@
-import icons from '../../../../assets/icons';
 import Logo from './components/Logo';
 import LaunchAppButton from './components/LaunchAppButton';
 import MobileMenuButton from './components/MobileMenuButton';
 import { Popover, Transition } from '@headlessui/react';
 import { Fragment, useState } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import Tooltip from 'antd/es/tooltip';
-import LaunchAppModal from './components/LaunchAppModal';
 
 export default function SiteNavigation(props) {
     return (
@@ -90,7 +87,7 @@ const DesktopSiteNavigation = (props) => {
     return (
         <div
             style={{ background: 'rgba(255, 255, 255, 0.1)' }}
-            className="fixed top-0 z-[9999] flex h-[96px] w-screen justify-between px-[120px] py-[24px] backdrop-blur-[30px]"
+            className="fixed top-0 z-[1000] flex h-[96px] w-screen justify-between px-[120px] py-[24px] backdrop-blur-[30px]"
         >
             <div className="flex items-center">
                 <Logo className="h-[48px]" />

@@ -17,7 +17,7 @@ export default function About() {
 
 const AboutUsDesktop = () => {
     return (
-        <div className="about-linear-background mx-[120px] flex h-[560px] w-[1200px] p-[60px] flex-row gap-[20px] rounded-[24px] border-[0.5px] border-[#24C3BC]">
+        <div className="about-linear-background mx-[120px] flex w-[1200px] p-[60px] flex-row gap-[20px] rounded-[24px] border-[0.5px] border-[#24C3BC]">
             <div className="flex max-w-[540px] flex-col justify-between gap-[20px]">
                 <div className="flex flex-col gap-[24px]">
                     <HeaderComponent
@@ -59,9 +59,14 @@ const AboutUsMobile = () => {
 
 const AboutUsButton = () => {
     return (
-        <div className="button-hover-2 flex items-center justify-center gap-[4px] self-stretch rounded-[16px] bg-white px-[20px] py-[12px] w-full md:w-[175px] min-[1440px]:px-[24px]">
+        <a
+            href="https://starksport.gitbook.io/starksport/"
+            target="_blank"
+            rel="noreferrer"
+            className="button-hover-2 flex items-center justify-center gap-[4px] self-stretch rounded-[16px] bg-white px-[20px] py-[12px] w-full md:w-[175px] min-[1440px]:px-[24px]"
+        >
             <div className="font-['Roboto'] text-[16px] font-bold text-[#07051B]">More About Us</div>
-        </div>
+        </a>
     );
 };
 
