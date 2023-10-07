@@ -28,7 +28,7 @@ import CERTIK_LOGO from './certik_logo.png';
 import STARKGUARDIAN_LOGO from './starkguar_logo.png';
 import ECLIP_SHADOW from './svg/eclipse_shadow.svg';
 import ECOSYSTEM_MOBILE from './ecosystem_mobile.png';
-import ECOSYSTEM_MD from './ecosystem_md.png';
+import ECOSYSTEM_MD from './ecosystem_md.svg';
 import ECOSYSTEM_DESKTOP from './ecosystem_desktop.png';
 
 // Roadmap
