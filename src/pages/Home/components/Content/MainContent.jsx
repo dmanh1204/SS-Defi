@@ -10,14 +10,13 @@ import PartnerShip from './components/PartnerShip';
 export default function MainContentHomepage() {
     return (
         <div className="pt-[70px] flex w-full md:pt-[96px]">
-            <div className="flex w-full !flex-col items-center gap-[80px] min-[1200px]:gap-[120px] py-[60px] min-[1200px]:py-[120px]">
+            <div className="flex w-full !flex-col items-center gap-[60px] min-[1200px]:gap-[120px] py-[60px] min-[1200px]:py-[120px]">
                 <Introduction />
                 <About />
                 <Feature />
                 <Ecosystem />
                 <Audit />
                 <OurRoadmap />
-                {/* <Backed /> */}
                 <PartnerShip />
             </div>
         </div>
