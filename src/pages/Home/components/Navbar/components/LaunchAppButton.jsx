@@ -15,9 +15,7 @@ export default function LaunchAppButton({ styleButton, styleTitle, onClick }) {
                 )}
                 onClick={onClick}
             >
-                <span className={twMerge("font-['Roboto'] text-[16px] font-bold text-[#1C1A2D]", styleTitle)}>
-                    Launch App
-                </span>
+                <span className={twMerge('text-[16px] font-bold text-[#1C1A2D]', styleTitle)}>Launch App</span>
             </button>
         </Tooltip>
     );

@@ -55,25 +55,25 @@ const MobileSiteNavigation = () => {
                 <div className="stroke-secondary flex flex-col gap-[10px] pt-[17px] md:gap-[30px] md:pt-[30px]">
                     <div className="flex flex-col gap-[10px] md:gap-[30px]">
                         <AnchorLink
-                            className="text-[16px] font-['Roboto'] font-medium text-white text-right hover:text-[#24c3bc]"
+                            className="text-[16px] font-medium text-white text-right hover:text-[#24c3bc]"
                             href="#about"
                         >
                             About
                         </AnchorLink>
                         <AnchorLink
-                            className="text-[16px] font-['Roboto'] font-medium text-white text-right hover:text-[#24c3bc]"
+                            className="text-[16px] font-medium text-white text-right hover:text-[#24c3bc]"
                             href="#features"
                         >
                             Features
                         </AnchorLink>
                         <AnchorLink
-                            className="text-[16px] font-['Roboto'] font-medium text-white text-right hover:text-[#24c3bc]"
+                            className="text-[16px] font-medium text-white text-right hover:text-[#24c3bc]"
                             href="#ecosystem"
                         >
                             Ecosystem
                         </AnchorLink>
                         <AnchorLink
-                            className="text-[16px] font-['Roboto'] font-medium text-white text-right hover:text-[#24c3bc]"
+                            className="text-[16px] font-medium text-white text-right hover:text-[#24c3bc]"
                             href="#partner"
                         >
                             Backers & Partners
@@ -97,25 +97,25 @@ const DesktopSiteNavigation = (props) => {
             <div className="hidden items-center text-[20px] font-bold md:flex md:gap-[5px] lg:gap-[20px]">
                 <AnchorLink
                     href="#about"
-                    className="button-navbar-hover flex w-fit cursor-pointer items-center font-['Roboto'] text-[16px] md:text-[12px] min-[1000px]:text-[16px] font-bold text-white max-[815px]:hidden px-[20px] py-[12px]"
+                    className="button-navbar-hover flex w-fit cursor-pointer items-center text-[16px] md:text-[12px] min-[1000px]:text-[16px] font-bold text-white max-[815px]:hidden px-[20px] py-[12px]"
                 >
                     <div className="text-white">About</div>
                 </AnchorLink>
                 <AnchorLink
                     href="#features"
-                    className="button-navbar-hover flex w-fit cursor-pointer items-center font-['Roboto'] text-[16px] md:text-[12px] min-[1000px]:text-[16px] font-bold text-white max-[815px]:hidden px-[20px] py-[12px]"
+                    className="button-navbar-hover flex w-fit cursor-pointer items-center text-[16px] md:text-[12px] min-[1000px]:text-[16px] font-bold text-white max-[815px]:hidden px-[20px] py-[12px]"
                 >
                     <div className="text-white">Features</div>
                 </AnchorLink>
                 <AnchorLink
                     href="#ecosystem"
-                    className="button-navbar-hover flex w-fit cursor-pointer items-center font-['Roboto'] text-[16px] md:text-[12px] min-[1000px]:text-[16px] font-bold text-white max-[815px]:hidden px-[20px] py-[12px]"
+                    className="button-navbar-hover flex w-fit cursor-pointer items-center text-[16px] md:text-[12px] min-[1000px]:text-[16px] font-bold text-white max-[815px]:hidden px-[20px] py-[12px]"
                 >
                     <div className="text-white">Ecosystem</div>
                 </AnchorLink>
                 <AnchorLink
                     href="#partner"
-                    className="button-navbar-hover flex w-fit cursor-pointer items-center font-['Roboto'] text-[16px] md:text-[12px] min-[1000px]:text-[16px] font-bold text-white max-[815px]:hidden px-[20px] py-[12px]"
+                    className="button-navbar-hover flex w-fit cursor-pointer items-center text-[16px] md:text-[12px] min-[1000px]:text-[16px] font-bold text-white max-[815px]:hidden px-[20px] py-[12px]"
                 >
                     <div className="text-white">Backers & Partners</div>
                 </AnchorLink>

@@ -34,9 +34,7 @@ const HomepageFooterMobile = (props) => {
                     <FooterBarLeft />
                     <FooterBarRight />
                     <div className="flex flex-col gap-[10px] justify-center">
-                        <div className="whitespace-nowrap font-['Roboto'] text-[16px] font-bold text-white">
-                            Community
-                        </div>
+                        <div className="whitespace-nowrap text-[16px] font-bold text-white">Community</div>
                         <SocialCard />
                     </div>
                 </div>
@@ -63,9 +61,7 @@ const HomepageFooterDesktop = () => {
                     <FooterBarLeft />
                     <FooterBarRight />
                     <div className="flex flex-col gap-[10px] justify-center">
-                        <div className="whitespace-nowrap font-['Roboto'] text-[16px] font-bold text-white">
-                            Community
-                        </div>
+                        <div className="whitespace-nowrap text-[16px] font-bold text-white">Community</div>
                         <SocialCard />
                     </div>
                 </div>
@@ -100,7 +96,7 @@ const FooterBarLeft = () => {
                 <AnchorLink
                     href={item.href}
                     key={idx}
-                    className="button-navbar-hover whitespace-nowrap font-['Roboto'] text-[16px] font-bold text-white py-[12px] px-[20px] rounded-[16px]"
+                    className="button-navbar-hover whitespace-nowrap text-[16px] font-bold text-white py-[12px] px-[20px] rounded-[16px]"
                 >
                     <div className="text-white">{item.title}</div>
                 </AnchorLink>
@@ -126,7 +122,7 @@ const FooterBarRight = () => {
                 <AnchorLink
                     href={item.href}
                     key={idx}
-                    className="button-navbar-hover whitespace-nowrap font-['Roboto'] text-[16px] font-bold text-white py-[12px] px-[20px] rounded-[16px]"
+                    className="button-navbar-hover whitespace-nowrap text-[16px] font-bold text-white py-[12px] px-[20px] rounded-[16px]"
                 >
                     <div className="text-white">{item.title}</div>
                 </AnchorLink>
@@ -141,7 +137,7 @@ const FooterHeading = (props) => {
             <a href="/">
                 <img src={icons.offical_logo} alt="logo" className="h-[48px] w-[212.082px]" />
             </a>
-            <div className="font-['Roboto'] text-[14px] font-normal leading-normal text-[#C6C6C6] md:text-[16px]">
+            <div className="text-[14px] font-normal leading-normal text-[#C6C6C6] md:text-[16px]">
                 support@starksport.finance
             </div>
         </div>
@@ -150,7 +146,7 @@ const FooterHeading = (props) => {
 
 const FooterPolicy = () => {
     return (
-        <div className="font-['Roboto'] text-[14px] font-normal leading-normal text-[#C6C6C6] text-center md:text-[16px]">
+        <div className="text-[14px] font-normal leading-normal text-[#C6C6C6] text-center md:text-[16px]">
             2023 © Copyright STARKSPORT. All Rights Reserved
         </div>
     );

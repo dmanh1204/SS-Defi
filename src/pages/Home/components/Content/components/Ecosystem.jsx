@@ -30,10 +30,8 @@ const EcosystemCard = ({ icon, title, description }) => {
         >
             <img src={icon} alt="ecosystem 1" className="max-w-[50px]" />
             <div className="flex w-full h-[60px] flex-col items-start gap-[2px] rounded-[16px]">
-                <div className="text-start font-['Roboto'] text-[16px] font-bold leading-normal md:leading-tight">
-                    {title}
-                </div>
-                <div className="font-['Roboto'] text-[14px] font-normal text-[#C6C6C6] leading-normal md:leading-tight">
+                <div className="text-start text-[16px] font-bold leading-normal md:leading-tight">{title}</div>
+                <div className="text-[14px] font-normal text-[#C6C6C6] leading-normal md:leading-tight">
                     {description}
                 </div>
             </div>

@@ -29,12 +29,7 @@ const RoadmapDesktop = () => {
     const RoadmapDesktopItem = (props) => {
         return (
             <div className={twMerge('flex gap-[4px]', props.className)}>
-                <div
-                    className={twMerge(
-                        "text-start font-['Roboto'] text-[16px] font-normal text-white",
-                        props.titleStyle,
-                    )}
-                >
+                <div className={twMerge('text-start text-[16px] font-normal text-white', props.titleStyle)}>
                     {props.item.demoContent}
                 </div>
             </div>
@@ -94,11 +89,11 @@ const RoadmapItem = (props) => {
                     }}
                     className="flex flex-col items-start justify-center gap-[4px] rounded-2xl px-[20px] pt-[9px] pb-[8px]"
                 >
-                    <div className="font-['Roboto'] text-[16px] font-bold leading-normal text-[#1C1A2D] whitespace-nowrap">
+                    <div className="text-[16px] font-bold leading-normal text-[#1C1A2D] whitespace-nowrap">
                         {props.item.quarter} - {props.item.date}
                     </div>
                 </div>
-                <div className="font-['Roboto'] text-start text-[14px] font-normal text-white leading-normal min-[400px]:w-[200px]">
+                <div className="text-start text-[14px] font-normal text-white leading-normal min-[400px]:w-[200px]">
                     <span>{props.item.demoContent[0]}</span>
                     <br />
                     <span>{props.item.demoContent[1]}</span>

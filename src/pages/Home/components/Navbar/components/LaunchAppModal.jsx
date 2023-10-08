@@ -11,9 +11,7 @@ export default function LaunchAppModal({ styleModal, styleTitle }) {
                     className="flex p-[12px] items-start gap-[12px]"
                 >
                     <img src={icons.EXCHANGE} alt="ecosystem icon" className="h-[24px] w-[24px]" />
-                    <div className='text-[16px] text-white font-["Roboto"] font-bold hover:text-[#24c3bc]'>
-                        Exchange
-                    </div>
+                    <div className="text-[16px] text-white font-bold hover:text-[#24c3bc]">Exchange</div>
                 </a>
                 <a
                     href="https://marketplace.starksport.finance/"
@@ -22,9 +20,7 @@ export default function LaunchAppModal({ styleModal, styleTitle }) {
                     className="flex p-[12px] items-start gap-[12px]"
                 >
                     <img src={icons.MARKETPLACE} alt="ecosystem icon" className="h-[24px] w-[24px]" />
-                    <div className='text-[16px] text-white font-["Roboto"] font-bold hover:text-[#24c3bc]'>
-                        Marketplace
-                    </div>
+                    <div className="text-[16px] text-white font-bold hover:text-[#24c3bc]">Marketplace</div>
                 </a>
             </div>
         </div>

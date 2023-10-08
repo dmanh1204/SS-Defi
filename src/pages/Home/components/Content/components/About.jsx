@@ -71,14 +71,14 @@ const AboutUsButton = () => {
             rel="noreferrer"
             className="button-hover-2 flex items-center justify-center gap-[4px] self-stretch rounded-[16px] bg-white px-[20px] py-[12px] w-full md:w-[175px] min-[1200px]:px-[24px]"
         >
-            <div className="font-['Roboto'] text-[16px] font-bold text-[#07051B]">More About Us</div>
+            <div className="text-[16px] font-bold text-[#07051B]">More About Us</div>
         </a>
     );
 };
 
 const AboutUsContentDesktop = () => {
     return (
-        <div className="self-stretch text-left font-['Roboto'] text-[14px] font-normal text-[#C6C6C6] md:text-[16px] min-[1200px]:px-0 min-[1200px]:text-start min-[1200px]:max-w-[530px]">
+        <div className="self-stretch text-left text-[14px] font-normal text-[#C6C6C6] md:text-[16px] min-[1200px]:px-0 min-[1200px]:text-start min-[1200px]:max-w-[530px]">
             <div className="">
                 Starksport Launchpad is the innovative decentralized IDO platform across blockchain networks. It has
                 been designed as a completely decentralized protocol allowing quality crypto projects to conduct the
@@ -105,7 +105,7 @@ const AboutUsContentMobile = () => {
         setIsReadMore(true);
     };
     return (
-        <div className="self-stretch text-left font-['Roboto'] text-[14px] font-normal text-[#C6C6C6] md:text-[16px] min-[1200px]:px-0 min-[1200px]:text-start min-[1200px]:max-w-[530px]">
+        <div className="self-stretch text-left text-[14px] font-normal text-[#C6C6C6] md:text-[16px] min-[1200px]:px-0 min-[1200px]:text-start min-[1200px]:max-w-[530px]">
             <div className="">
                 Starksport Launchpad is the innovative decentralized IDO platform across blockchain networks. It has
                 been designed as a completely decentralized protocol allowing quality crypto projects to conduct the

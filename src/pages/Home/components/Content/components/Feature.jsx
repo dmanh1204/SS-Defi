@@ -58,10 +58,10 @@ const FeatureCard = () => {
                                 <img src={item.icon} alt="banner" />
                             </div>
                             <div className="inline-flex flex-col items-center gap-[12px]">
-                                <div className="text-center font-['Roboto'] text-[16px] font-bold text-white md:text-[20px]">
+                                <div className="text-center text-[16px] font-bold text-white md:text-[20px]">
                                     {item.title}
                                 </div>
-                                <div className="text-center font-['Roboto'] text-[14px] font-normal text-[#C6C6C6] md:max-w-[268px] md:text-[16px] min-[1200px]:px-[20px]">
+                                <div className="text-center text-[14px] font-normal text-[#C6C6C6] md:max-w-[268px] md:text-[16px] min-[1200px]:px-[20px]">
                                     {item.subtitle}
                                 </div>
                             </div>
